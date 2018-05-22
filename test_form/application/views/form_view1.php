@@ -5,7 +5,8 @@
         <h3>:: ฟอร์มรับข้อมูลจากผู้ใช้ :: </h3>
         <?php
         echo form_open('form/send');
-        echo "input: ".form_input('xinput')."<br/>";
+        echo "input: ".form_input('xinput')."<br/><br>";
+        echo "input: ".form_input('xpassword')."<br/>";
         echo "Textarea:<br/>".form_textarea('xtextarea')."<br/>";
         echo "Radio : ";
         echo form_radio('xradio','M')."Male";
@@ -13,7 +14,7 @@
         
         echo "Checkbox : ";
         echo form_checkbox('xcheckbox1','R')."Read Book";
-        echo form_checkbox('xcheckbox2'.'F')."Play Football <br/><br/>";
+        echo form_checkbox('xcheckbox2','F')."Play Football <br/><br/>";
         
         echo "Drop Down : ";
         $options = array('1' =>'Red',
@@ -33,13 +34,13 @@
         
         
         
-        <form action="http://localhost/test_form/index.php/form/send" method="post">
+<!--        <form action="http://localhost/test_form/index.php/form/send" method="post">
             <input type="text" name="xinput" value=""/>
                    <input type="text" name="xinput" value=""/>
                    
                    <input type="password" name="xpassword" value=""/>
                    <textarea name ="xtextarea" cols="40" rows="10"></textarea>
-        </form>
+        </form>-->
         
         
     </body>

@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+if(!defined('BASEPATH')) exit('No direct script access allowed');
 
 class Form extends CI_Controller {
 
@@ -26,7 +26,24 @@ class Form extends CI_Controller {
 	}
         public function index2(){
               $this->load->helper('form');
-		$this->load->view('form_view1');
+              $this->load->view('form_view1');
                 
+        }
+        
+        public function send(){
+            if($this->input->post('mysubmit')){
+                $data=array(
+                    "xinput" => $this->input->post('xinput'),
+                    'xpassword' => $this->input->post('xpassword'),
+                    'xtextarea'=> $this->input->post('xtextarea'),
+                    'xradio'=> $this->input->post('xradio'),
+                    'xcheckbox1'=> $this->input->post('xcheckbox1'),
+                    'xcheckbox2'=> $this->input->post('xcheckbox2'),
+                    'xdropdown'=> $this->input->post('xdropdown'),
+                    'xhidden' => $this->input->post('xhidden'),
+                );
+                
+            }
+            $this->load->view("form_view2",$data);
         }
 }
