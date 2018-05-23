@@ -1,0 +1,41 @@
+[1mdiff --git a/email-tracker2/index.php b/email-tracker2/index.php[m
+[1mindex c3399e7..02428d3 100644[m
+[1m--- a/email-tracker2/index.php[m
+[1m+++ b/email-tracker2/index.php[m
+[36m@@ -12,14 +12,14 @@[m [minclude "config.php";[m
+ [m
+  if (isset($_POST['generate']))[m
+  {[m
+[31m- [m
+[32m+[m
+ 	$webadd = $_SERVER['SERVER_NAME'];[m
+ 	$userID = filter_var($_POST['userID'], FILTER_SANITIZE_STRING);[m
+ 	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);[m
+ 	$email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);[m
+ 	$subject = filter_var($_POST['subject'], FILTER_SANITIZE_STRING);[m
+ 	$date= date("Y-m-d h:i:sa");[m
+[31m-	[m
+[32m+[m
+ 	$url =  "<xmp><img src='".$protocol."://".$webadd."/".$folder_path."/record.php?log=true&user_id=".$userID."&name=".$name." &subject=".$subject."&email=".$email."&date=".$date."' width='1' height='1' border='0' /></xmp>";[m
+  }[m
+ ?>[m
+[36m@@ -72,7 +72,7 @@[m [mxmp {[m
+ [m
+ .tg .tg-yw4l {[m
+     vertical-align: top;[m
+[31m-}    [m
+[32m+[m[32m}[m
+ }[m
+ </style>[m
+ </head>[m
+[36m@@ -94,6 +94,8 @@[m [mxmp {[m
+ </p>[m
+ <div>[m
+     <?php require "report.php"; ?>[m
+[32m+[m
+[32m+[m[32m    sss[m
+ </div>[m
+ </body>[m
+[31m-</html>[m
+\ No newline at end of file[m
+[32m+[m[32m</html>[m
