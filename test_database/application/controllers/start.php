@@ -52,10 +52,32 @@ class start extends CI_Controller{
         }
         $this->load->view('delete_view');
     }
-    
+    public function update(){
+        $data['query']=$this->member_model->getmember();
+        @$this->load->view('update_view',$data);
+    }
+    public function update2(){
+        $this->form_validation->set_rules('fname','ชื่อ','required');     
+        $this->form_validation->set_rules('lname','นามสกุล','required');      
+        $this->form_validation->set_message('required','ERROR : กรุณากรอกข้อมูล%s');
+        if($this->form_validation->run() ==false){
+            $this->load->view('update_view');
+        }else{
+            if($this->member_model->update() == true)
+            {
+                $data['result']="แก้ไขข้อมูลเรียบร้อย";
+                
+            }
+            else{
+                $data['result']="ไม่สามารถแก้ไขข้อมูลได้";
+                
+            }
+            $this->load->view('update_view2',$data);
+        }
+    }
     public function index(){
         $data['query']= $this->member_model->all();
         $this->load->view('home_view',$data);
     }
-    //put your code here
+    
 }
